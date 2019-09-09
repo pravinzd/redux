@@ -1,0 +1,4 @@
+input.ng-touched,
+textarea.ng-touched {
+    border:  solid 1px red;
+}
