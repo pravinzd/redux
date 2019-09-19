@@ -1,3 +1,6 @@
 a{
     cursor: pointer;
 }
+.btn-group.show .dropdown-menu{
+    display: block;
+}

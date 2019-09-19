@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand">Recipe Book</a>
     </div>
 
-    <div class="collapse navbar-collapse">
+    <div class="">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"  *ngIf="isAuthenticated"><a [routerLink]="['/recipes']">Recipes</a></li>
         <li routerLinkActive="active"  *ngIf="!isAuthenticated"><a [routerLink]="['/auth']" >Authenticate</a></li>
@@ -23,5 +23,56 @@
         </li>
       </ul>
     </div>
+  </div>
+</nav> -->
+
+
+
+
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">Recipe Book</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav  mr-auto">
+      <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+        <a class="nav-link" [routerLink]="['/recipes']">Recipes</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="!isAuthenticated">
+        <a class="nav-link" [routerLink]="['/auth']">Authenticate</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/shopping-list']">Shopping List</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" (click)="onlogout()">Logout</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isAuthenticated" appDropdown>
+        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Manage </a>
+        <div class="dropdown-menu  dropdown-menu-right">
+          <a class="dropdown-item" (click)="onSaveData()">Save Data</a>
+          <a class="dropdown-item" (click)="onFetchData()">Fetch Data</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>

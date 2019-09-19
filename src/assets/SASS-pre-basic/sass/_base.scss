@@ -1,0 +1,53 @@
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    // padding-top: $px58;
+    font-family: $roboto;
+    font-weight: 400;
+    color: $color-secondary;
+}
+
+.body-fixed {
+    overflow: hidden;
+
+    .navbar-collapse {
+        max-height: 80vh;
+
+        &.show {
+            overflow-y: auto;
+        }
+    }
+}
+
+a {
+    color: $color-primary;
+}
+
+a:hover {
+    color: $color-primary-hover;
+    text-decoration: none;
+}
+
+input:focus,
+button:focus,
+a:focus {
+    outline-width: 0;
+    outline-style: solid;
+    outline-color: transparent;
+}
+
+button:focus,
+a:focus {
+    border: 0;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}

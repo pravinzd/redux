@@ -1,0 +1,24 @@
+$breakpoint: (
+    xs: 24em, // extra small 384
+    lt-sm: 35.938em, //575px
+    sm: 36em, // 576px
+    md: 48em, // 768px
+    lg: 62em, // 992px 
+    xl: 75em, // 1200px    
+    tablet: 47.938em, // 767px
+    lt: 61.938em, // 991px 
+);
+   
+@mixin breakpoint($bp, $rule: min-width) {
+    @media screen and (#{$rule}: map-get($breakpoint, $bp)) {
+        @content;
+    }
+}
+
+
+// @include breakpoint(m) {
+//         width: 48%;
+//  }
+// @include breakpoint(m, max-width) {
+//         width: 100%;
+//  }
